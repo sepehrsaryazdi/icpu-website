@@ -56,8 +56,9 @@ window.addEventListener("scroll", (event) => {
         newImg.src = dogSequenceImages[parseInt(this.scrollY/10)];
         _sticky.classList.add("sticky");
         _sticky.classList.remove("relative");
-        _sticky.style.top = 0 + "px";
-       
+        if(!_sticky.isScrolling) {
+         _sticky.style.top = 0 + "px";
+        }
         _sticky.isScrolling = true;
         
         
@@ -67,7 +68,6 @@ window.addEventListener("scroll", (event) => {
         _sticky.classList.remove("sticky");
         _sticky.classList.add("relative");
         if(_sticky.isScrolling) {
-            
             console.log(window.innerWidth)
         _sticky.style.top = -0.1*window.innerWidth+ this.scrollY + "px";
         }
