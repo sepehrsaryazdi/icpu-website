@@ -20,8 +20,13 @@ class ImageSequenceControl {
 }
 
 
+const imageSequenceControl = new ImageSequenceControl(imageSequences)
+
+console.log(imageSequenceControl.imageSequences)
+
+
 // var _img = document.getElementById('fixed');
-var _img = document.getElementById("fixedDiv")
+var _img = document.getElementById("scrollingImage")
 
 
 var newImg = new Image;
@@ -42,14 +47,15 @@ window.addEventListener("scroll", (event) => {
     let scroll = this.scrollY;
     // console.log(scroll)
     
-    if(0 <= this.scrollY & this.scrollY <= 10*137){
+    if(_img.style.top <= this.scrollY & this.scrollY <= _img.style.top + 10*137){
         _img.style.opacity = 1;
         newImg.src = dogSequenceImages[parseInt(this.scrollY/10)];
     } else {
-        setInterval(function () {_img.style.opacity -= 0.1*(_img.style.opacity)}, 1000);
+        // setInterval(function () {_img.style.opacity -= 0.1*(_img.style.opacity)}, 1000);
         _img.style.opacity = 0;
     }
     
+    console.log(_img.style.top)
 
     // _img.style.opacity = 1/(1+this.scrollY);
     // _img.style.top = this.scrollY + "px";

@@ -1,12 +1,27 @@
 body {background-color: darkblue;
+  border:none;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  margin-top: 10%;
+  }
+
+  div {
+    top: 0;
+    left: 0;
+    border: none;
+    margin: 0;
   }
 
 h1 {
   color: white;
 }
 
+h2 {
+  color: white;
+}
+
 .fixed{
-  position:fixed;
+  position: sticky;
   top:0;
   z-index: 1;
   width:100%;
@@ -14,10 +29,58 @@ h1 {
   border: none;
  }
 
+ .background{
+  color: #999999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+}
 
- #movingDiv { 
-  position: relative;  }
 
-  #fixedDiv {
-    position: fixed;
+
+  #scrollingImage {
+    align-self: right;
+    margin-left: 40%;
+    width: 60%;
   }
+
+.section {
+  display:flex;
+  flex-flow: row wrap;
+}
+
+
+.textDiv {
+  padding-left: 5%;
+  margin-right: 50%;
+  border: none;
+  
+
+}
+
+.separator {
+  margin: 10em;
+  padding: 10em;
+
+}
+  
+
+
+.separate_section {
+  position: sticky;
+  padding-top: 10%;
+  padding-left: 10%;
+  display:flex;
+  margin-bottom: 50%;
+}
+
+.textBox {
+  width: 50%;
+  padding-right: -50%;
+}
+
+.imageBox {
+  width: 100%;
+
+}
