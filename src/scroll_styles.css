@@ -66,13 +66,23 @@ h2 {
 }
   
 
+.sticky {
+  position: sticky;
+}
+
+
+.relative {
+  position: relative;
+}
+
 
 .separate_section {
-  position: sticky;
+  top: 0;
   padding-top: 10%;
   padding-left: 10%;
   display:flex;
-  margin-bottom: 50%;
+  margin-top: 10%;
+  margin-bottom: 60%;
 }
 
 .textBox {
