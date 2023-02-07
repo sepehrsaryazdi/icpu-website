@@ -7,17 +7,42 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 } */
+/* 
+body {
+  background-image: url("background.svg");
+  background-color: #0004ff;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 1000px;
+} */
+
+.background {
+  border: 1px;
+  border-style: solid;
+  /* background-color: ; */
+  position: fixed;
+  z-index: -1;
+  width: 200%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  transform: rotate(90deg); 
+  min-width: 50%;
+  min-height: 50%;
+}
 
 h1 {
   font-family: freight-big-pro, serif;
-  font-style: bold;
+  font-style: normal;
   font-weight: 600;
+  color: white;
 }
 
 h2 {
   font-family: forma-djr-micro, sans-serif;
   font-style: normal;
   font-weight: 200;
+  color: white;
 }
 
 
