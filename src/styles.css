@@ -3,6 +3,24 @@
   justify-content: center;
   flex-flow: row wrap;
 }
+/* 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+} */
+
+h1 {
+  font-family: freight-big-pro, serif;
+  font-style: bold;
+  font-weight: 600;
+}
+
+h2 {
+  font-family: forma-djr-micro, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+}
+
+
 
 svg {
   width: 100%;
