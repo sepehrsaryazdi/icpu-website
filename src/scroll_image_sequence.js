@@ -142,7 +142,7 @@ class ImageSequenceControl {
 
         if(scroll <= domainRight & scroll >= domainLeft) {
             this.imageStates[this.currentDiv].src = this.imageSequences[this.currentDiv][parseInt(this.imageSequences[this.currentDiv].length*(scroll - domainLeft)/(domainRight - domainLeft))]
-            // console.log(this.imageStates[this.currentDiv])
+            console.log(this.imageStates[this.currentDiv])
         } else {
             if(scroll > domainRight){
                 this.onChangedDivAfter(scroll)
