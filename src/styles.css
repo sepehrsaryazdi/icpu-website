@@ -11,8 +11,8 @@ svg {
 
 
 .separateSection {
-  border: 1px;
-  border-style: solid;
+  /* border: 1px; */
+  /* border-style: solid; */
   margin-bottom: 50%;
   margin-top: 5%;
   display:flex;
@@ -28,18 +28,18 @@ svg {
 }
 
 .textBox {
-  border: 1px green;
-  border-style: solid;
+  /* border: 1px green; */
+  /* border-style: solid; */
   width: 50%;
-  padding-left: 5%;
-  padding-top: 10%;
+  padding-left: 8%;
+  padding-top: 5%;
   padding-right: 5%;
 
 }
 
 .imageBox {
-  border: 1px red;
-  border-style: solid;
+  /* border: 1px red; */
+  /* border-style: solid; */
   width: 50%;
   padding-left: 5%;
   padding-right: 5%;
