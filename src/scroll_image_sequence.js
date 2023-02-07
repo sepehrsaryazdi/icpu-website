@@ -64,7 +64,7 @@ class ImageSequenceControl {
         {
             let newImg = new Image;
 
-            console.log(newImg.onload)
+            // console.log(newImg.onload)
             newImg.onload = function() {
                 this.imgs[i].src = this.src;
             }
@@ -132,19 +132,17 @@ class ImageSequenceControl {
     updateState(scroll) {
         // console.log(scroll)
         let first_div = this.divs[0]
-        // console.log(first_div.offsetHeight)
-        // console.log(scroll)
-        // console.log(this.computeDivTopAbsolutePosition(first_div) - this.computeDivBottomAbsolutePosition(first_div));
-        // console.log(this.computeDivHeight(first_div))
-        // console.log(this.scrollDomain)
         
-        console.log(this.currentDiv)
+
+
+
 
         let domainLeft = this.scrollDomain[this.currentDiv]
         let domainRight = this.scrollDomain[this.currentDiv+1]
 
         if(scroll <= domainRight & scroll >= domainLeft) {
-
+            this.imageStates[this.currentDiv].src = this.imageSequences[this.currentDiv][parseInt(this.imageSequences[this.currentDiv].length*(scroll - domainLeft)/(domainRight - domainLeft))]
+            // console.log(this.imageStates[this.currentDiv])
         } else {
             if(scroll > domainRight){
                 this.onChangedDivAfter(scroll)
