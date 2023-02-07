@@ -19,7 +19,7 @@ for(i = 0 ; i < divs.length ; i ++){
     isTimeAnimated.push(false)
 }
 
-isTimeAnimated[0] = true;
+isTimeAnimated[1] = true;
 
 
 
@@ -171,9 +171,9 @@ class ImageSequenceControl {
                     this.animatingEquivalentScrolls.push(imageEquivalentScroll);
                     const currentDivIndex = this.currentDiv;
                     const currentIntervalId = this.animatingIntervals.length;
-                    var function_val = () => this.updateLiveAnimation(currentDivIndex, domainLeft, domainRight, currentIntervalId);
+                    var function_val = () => this.updateLiveAnimation(currentDivIndex, domainLeft, domainLeft + this.imageSequences[currentDivIndex].length, currentIntervalId);
                     this.wasTimeAnimated[this.currentDiv] = true;
-                    var newIntervalId = setInterval(function_val,10);
+                    var newIntervalId = setInterval(function_val,35);
                     this.animatingIntervals.push(newIntervalId)
                     
                 }
