@@ -6,10 +6,7 @@ for (i= 1; i < 139 ; i++) {
 }
 
 
-
-
-
-
+const isTimeAnimated = []
 
 
 
@@ -19,7 +16,13 @@ const imgs = Array(...document.getElementsByClassName("scrollingImage"))
 const imageSequences = []
 for(i = 0 ; i < divs.length ; i ++){
     imageSequences.push(dogSequenceImages)
+    isTimeAnimated.push(false)
 }
+
+isTimeAnimated[0] = true;
+
+
+
 
 var imgSources = []
 
@@ -36,13 +39,18 @@ imgs.forEach(function(img, index, arr ){
 
 
 class ImageSequenceControl {
-    constructor(imageSequences, divs, imgs, imageStates) {
+    constructor(imageSequences, divs, imgs, imageStates, isTimeAnimated) {
         this.imageSequences = imageSequences
         this.divs = divs
         this.imgs = imgs
         this.imageStates = imageStates;
+        this.isTimeAnimated = isTimeAnimated;
+        this.wasTimeAnimated = []
+        this.animatingIntervals = []
+        this.animatingEquivalentScrolls = []
         // this.initialiseSVGs()
         this.currentDiv = 0
+        this.imageEquivalentScroll = 0;
         this.divs[this.currentDiv].classList.add("sticky");
         this.scrollDomain = [0,this.computeNextScrollDomain(divs[0],divs[1])]
         this.originalPositions = []
@@ -51,6 +59,7 @@ class ImageSequenceControl {
         }
         for(i=0 ; i < this.divs.length ; i ++){
             this.originalPositions.push(this.computeDivTopAbsolutePosition(divs[i]))
+            this.wasTimeAnimated.push(false)
         }
 
         
@@ -125,8 +134,21 @@ class ImageSequenceControl {
     
     
 
+    updateImageState(index, imageEquivalentScroll, domainLeft, domainRight) {
+        this.imageStates[index].src = this.imageSequences[index][parseInt(this.imageSequences[index].length*(imageEquivalentScroll - domainLeft)/(domainRight - domainLeft))]
+    }
     
-    
+    updateLiveAnimation(index, domainLeft, domainRight, intervalId) {
+        
+        if(this.animatingEquivalentScrolls[intervalId] >= domainRight) {
+            clearTimeout(intervalId)
+            return;
+        }
+        this.updateImageState(index, this.animatingEquivalentScrolls[intervalId], domainLeft, domainRight);
+        this.animatingEquivalentScrolls[intervalId] += 1
+        
+        
+    }
     
 
     updateState(scroll) {
@@ -139,10 +161,24 @@ class ImageSequenceControl {
 
         let domainLeft = this.scrollDomain[this.currentDiv]
         let domainRight = this.scrollDomain[this.currentDiv+1]
-
+         
         if(scroll <= domainRight & scroll >= domainLeft) {
-            this.imageStates[this.currentDiv].src = this.imageSequences[this.currentDiv][parseInt(this.imageSequences[this.currentDiv].length*(scroll - domainLeft)/(domainRight - domainLeft))]
-            console.log(this.imageStates[this.currentDiv])
+            if(!this.isTimeAnimated[this.currentDiv]) {
+            this.updateImageState(this.currentDiv, scroll, domainLeft, domainRight)
+            } else {
+                if(!this.wasTimeAnimated[this.currentDiv]) {
+                    var imageEquivalentScroll = domainLeft;
+                    this.animatingEquivalentScrolls.push(imageEquivalentScroll);
+                    const currentDivIndex = this.currentDiv;
+                    const currentIntervalId = this.animatingIntervals.length;
+                    var function_val = () => this.updateLiveAnimation(currentDivIndex, domainLeft, domainRight, currentIntervalId);
+                    this.wasTimeAnimated[this.currentDiv] = true;
+                    var newIntervalId = setInterval(function_val,10);
+                    this.animatingIntervals.push(newIntervalId)
+                    
+                }
+            }
+            // console.log(this.imageStates[this.currentDiv])
         } else {
             if(scroll > domainRight){
                 this.onChangedDivAfter(scroll)
@@ -188,7 +224,7 @@ window.addEventListener("scroll", (event) => {
         window.scrollTo(0, 0);
     } else {
         instantiated = true;
-        imageSequenceControl = new ImageSequenceControl(imageSequences, divs, imgs, imgSources);
+        imageSequenceControl = new ImageSequenceControl(imageSequences, divs, imgs, imgSources, isTimeAnimated);
     }
 
     } else {
