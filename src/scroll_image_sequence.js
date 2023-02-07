@@ -6,15 +6,42 @@ for (i= 1; i < 139 ; i++) {
 }
 
 
-const imageSequences = [dogSequenceImages, dogSequenceImages, dogSequenceImages]
+
+
+
+
+
+
+
 const divs = document.getElementsByClassName("separateSection")
-const imgs = document.getElementsByClassName("scrollingImage")
+const imgs = Array(...document.getElementsByClassName("scrollingImage"))
+
+const imageSequences = []
+for(i = 0 ; i < divs.length ; i ++){
+    imageSequences.push(dogSequenceImages)
+}
+
+var imgSources = []
+
+
+imgs.forEach(function(img, index, arr ){
+    var newImg = new Image;
+    newImg.onload = function() {
+        img.src = newImg.src;
+    }
+    newImg.src = imageSequences[index][0]
+    imgSources.push(newImg)
+})
+
+
 
 class ImageSequenceControl {
-    constructor(imageSequences, divs, imgs) {
+    constructor(imageSequences, divs, imgs, imageStates) {
         this.imageSequences = imageSequences
         this.divs = divs
         this.imgs = imgs
+        this.imageStates = imageStates;
+        // this.initialiseSVGs()
         this.currentDiv = 0
         this.divs[this.currentDiv].classList.add("sticky");
         this.scrollDomain = [0,this.computeNextScrollDomain(divs[0],divs[1])]
@@ -26,12 +53,27 @@ class ImageSequenceControl {
             this.originalPositions.push(this.computeDivTopAbsolutePosition(divs[i]))
         }
 
-        console.log(this.originalPositions)
-
         
 
       }
     
+
+    initialiseSVGs() {
+
+        for(i = 0 ; i < this.imgs.length ; i ++ )
+        {
+            let newImg = new Image;
+
+            console.log(newImg.onload)
+            newImg.onload = function() {
+                this.imgs[i].src = this.src;
+            }
+            newImg.src = this.imageSequences[i][0]
+
+            this.imageStates.push(newImg)
+        }
+
+    }
 
     computeNextScrollDomain(div1, div2) {
         return this.computeDivTopAbsolutePosition(div2)-this.computeDivBottomAbsolutePosition(div1) + this.computeDivTopAbsolutePosition(div1)
@@ -148,7 +190,7 @@ window.addEventListener("scroll", (event) => {
         window.scrollTo(0, 0);
     } else {
         instantiated = true;
-        imageSequenceControl = new ImageSequenceControl(imageSequences, divs, imgs);
+        imageSequenceControl = new ImageSequenceControl(imageSequences, divs, imgs, imgSources);
     }
 
     } else {
