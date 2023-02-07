@@ -82,6 +82,9 @@ class ImageSequenceControl {
         }
     
     
+
+    
+    
     
 
     updateState(scroll) {
@@ -108,6 +111,9 @@ class ImageSequenceControl {
             }
         }
 
+    
+    }
+
 
         // console.log(this.computeDivAbsoluteDifference(this.divs[0], this.divs[1]))
 
@@ -115,13 +121,41 @@ class ImageSequenceControl {
 
 
     
-}
 
 
-const imageSequenceControl = new ImageSequenceControl(imageSequences, divs, imgs);
+let initialWidth = window.innerWidth;
+
+let instantiated = false;
+
+let imageSequenceControl = null;
+
 
 window.addEventListener("scroll", (event) => {
     let scroll = this.scrollY;
-    imageSequenceControl.updateState(scroll)  
+
+    if(initialWidth != window.innerWidth) {
+        instantiated = false;
+        location.reload();
+
+    }
+
+    if(!instantiated) {
+
+        initialWidth = window.innerWidth;
+
+
+    if(scroll != 0){
+        window.scrollTo(0, 0);
+    } else {
+        instantiated = true;
+        imageSequenceControl = new ImageSequenceControl(imageSequences, divs, imgs);
+    }
+
+    } else {
+        
+        imageSequenceControl.updateState(scroll)  
+
+    }
+
 })
 
