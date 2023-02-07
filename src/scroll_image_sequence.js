@@ -19,7 +19,7 @@ class ImageSequenceControl {
         this.divs[this.currentDiv].classList.add("sticky");
         this.scrollDomain = [0,this.computeNextScrollDomain(divs[0],divs[1])]
         this.originalPositions = []
-        for(i = 1 ; i < this.divs.length-1 ; i ++ ){
+        for(i = 1 ; i < this.divs.length-1; i ++ ){
             this.scrollDomain.push(this.computeNextScrollDomain(divs[i],divs[i+1]))
         }
         for(i=0 ; i < this.divs.length ; i ++){
