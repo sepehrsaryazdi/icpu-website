@@ -16,33 +16,40 @@ body {
   min-height: 1000px;
 } */
 
-.background {
-  border: 1px;
-  border-style: solid;
-  /* background-color: ; */
-  position: fixed;
-  z-index: -1;
-  width: 200%;
-  height: 100%;
+body {
   margin: 0;
   padding: 0;
-  transform: rotate(90deg); 
-  min-width: 50%;
-  min-height: 50%;
+}
+
+.background {
+  /* border: 1px; */
+  /* border-style: solid; */
+  /* background-color: ; */
+  position: fixed;
+  align-items: center;
+  z-index: -1;
+  width: 200%;
+  height: 200%;
+  /* top: -50%; */
+  left: 30%;
+  top: -10px;
+  margin: 0;
+  padding: 0;
+  /* transform: rotate(90deg);  */
 }
 
 h1 {
   font-family: freight-big-pro, serif;
   font-style: normal;
   font-weight: 600;
-  color: white;
+  /* color: white; */
 }
 
 h2 {
   font-family: forma-djr-micro, sans-serif;
   font-style: normal;
   font-weight: 200;
-  color: white;
+  /* color: white; */
 }
 
 
