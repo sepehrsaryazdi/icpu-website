@@ -56,11 +56,15 @@ class ImageSequenceControl {
     onChangedDivBefore(scroll) {
         this.divs[this.currentDiv].classList.remove("sticky");
         this.divs[this.currentDiv].classList.add("relative");
+
+        // this.divs[this.currentDiv].classList.add("relative");
+        // this.divs[this.currentDiv].style.top = this.originalPositions[this.currentDiv] + "px";
+
         
         this.divs[this.currentDiv - 1].classList.add("sticky");
         this.divs[this.currentDiv-1].classList.remove("relative");
 
-        this.divs[this.currentDiv].style.bottom = this.originalPositions[this.currentDiv] + "px";
+        this.divs[this.currentDiv-1].style.top = 0 + "px";
         this.currentDiv -= 1
     }
 
@@ -72,7 +76,7 @@ class ImageSequenceControl {
         this.divs[this.currentDiv + 1].classList.add("sticky");
         this.divs[this.currentDiv+1].classList.remove("relative");
         
-        console.log(this.originalPositions[this.currentDiv])
+        // console.log(this.originalPositions[this.currentDiv])
         this.divs[this.currentDiv].style.top = this.originalPositions[this.currentDiv+1] - this.computeDivHeight(this.divs[this.currentDiv]) - this.originalPositions[this.currentDiv] + "px";
         this.currentDiv += 1
         }
@@ -88,7 +92,8 @@ class ImageSequenceControl {
         // console.log(this.computeDivTopAbsolutePosition(first_div) - this.computeDivBottomAbsolutePosition(first_div));
         // console.log(this.computeDivHeight(first_div))
         // console.log(this.scrollDomain)
-
+        
+        console.log(this.currentDiv)
 
         let domainLeft = this.scrollDomain[this.currentDiv]
         let domainRight = this.scrollDomain[this.currentDiv+1]
@@ -98,6 +103,8 @@ class ImageSequenceControl {
         } else {
             if(scroll > domainRight){
                 this.onChangedDivAfter(scroll)
+            } else if (scroll < domainLeft) {
+                this.onChangedDivBefore(scroll)
             }
         }
 
