@@ -123,11 +123,11 @@ svg {
 
 .textBox {
   
-  /* border: 1px green;
-  border-style: solid; */
+  border: 1px green;
+  border-style: solid;
   width: 35%;
-  padding-left: 8%;
-  padding-top: 15%;
+  padding-left: 4%;
+  padding-top: 10%;
   padding-right: 5%;
 
 }
@@ -139,39 +139,38 @@ svg {
 
 
 .imageBox {
-  /* border: 1px red;
-  border-style: solid; */
-  width: 65%;
+  border: 1px red;
+  border-style: solid;
+  /* width: 65%; */
   padding-left: 0%;
   padding-right: 0%;
   min-height: 1000px;
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-self: center;
   
 }
 
 .scrollingImage {
-  /* border: 1px red;
-  border-style: solid; */
+  border: 1px red;
+  border-style: solid;
   width: 100%;
 }
 
 
 .pillarItems {
-  margin-top: -1800px;
+  /* margin-top: -1800px; */
   /* border: 1px;
   border-style: solid; */
-
   display:flex;
   justify-content: center;
   flex-flow: row wrap;
 
 }
 
-.pillar:hover{
+/* .pillar:hover{
   box-shadow: 120px 80px 40px 20px #0ff;
-}
+} */
 
 .bounce:hover {
   animation-name: bounce;
@@ -184,7 +183,7 @@ svg {
 }
 
 .pillar {
-  z-index: 1;
+  /* z-index: 1; */
   margin: 0;
   padding: 0;
   width:200px;
@@ -208,6 +207,6 @@ svg {
   
 }
 
-.pillarSeparation {
+/* .pillarSeparation {
  
-}
+} */
