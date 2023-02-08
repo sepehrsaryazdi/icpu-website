@@ -156,3 +156,58 @@ svg {
   border-style: solid; */
   width: 100%;
 }
+
+
+.pillarItems {
+  margin-top: -1800px;
+  /* border: 1px;
+  border-style: solid; */
+
+  display:flex;
+  justify-content: center;
+  flex-flow: row wrap;
+
+}
+
+.pillar:hover{
+  box-shadow: 120px 80px 40px 20px #0ff;
+}
+
+.bounce:hover {
+  animation-name: bounce;
+  animation-timing-function: ease;
+}
+@keyframes bounce {
+0%   { transform: translateY(0); }
+50%  { transform: translateY(-50px); }
+100% { transform: translateY(0); }
+}
+
+.pillar {
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  width:200px;
+  margin-left:5%;
+  margin-right: 5%;
+  border: 1px;
+  border-style: solid;
+  display:flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  align-items: center;
+  /* width: 1%; */
+}
+
+.pillarImage {
+  /* width: 5%;
+  height: 5%; */
+  padding: 0;
+  width: 100%;
+  margin:0;
+  
+}
+
+.pillarSeparation {
+ 
+}
