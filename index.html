@@ -86,7 +86,7 @@
          
          <div class="horizontalSeparator">
 
-         <img src="src/images/problemStatement.png" style="width: 100%; margin-left:-40px; margin-top: -8%;"></img>
+         <img src="src/images/problemStatement.png" style="width: 100%; margin-left:-15px; margin-top: -8%;"></img>
          </div>
         </div>
 
@@ -113,7 +113,7 @@
          
          <div class="horizontalSeparator">
 
-         <img src="src/images/aims.png" style="width: 100%; margin-left:-40px; margin-top: -8%;"></img>
+         <img src="src/images/aims.png" style="width: 100%; margin-left:-10px; margin-top: -8%;"></img>
          </div>
         </div>
 
@@ -134,33 +134,36 @@
          <div class="textBox" style="width: 100%;">
 
          <div class="pillarItems">
-            <div class="pillar">
-            <div class="pillarSeparation" >
+          
+            <div class="pillar" style="cursor: pointer;" onclick="gotoDiv('partnerships')">
+                
+            <div class="pillarSeparation">
                 <img src="src/pillar1.png" class="pillarImage"></img>
             </div>
             <div class="pillarSeparation"  style="margin-top: 0px;">
-                <h1>
+                <h1 class="pillarText">
                     Partnerships
                 </h1>
             </div>
-    
             </div>
-            <div class="pillar">
+        
+
+            <div class="pillar" style="cursor: pointer;" onclick="gotoDiv('productLine')">
                 <div class="pillarSeparation">
                     <img src="src/pillar2.png" class="pillarImage"></img>
                 </div>
                 <div class="pillarSeparation">
-                    <h1>
+                    <h1  class="pillarText">
                         Product Line
                     </h1>
                 </div>
             </div>
-            <div class="pillar">
+            <div class="pillar" style="cursor: pointer;" onclick="gotoDiv('operations')">
                 <div class="pillarSeparation">
                     <img src="src/pillar3.png" class="pillarImage"></img>
                 </div>
                 <div class="pillarSeparation" style="margin-top: -35px;">
-                    <h1>
+                    <h1  class="pillarText">
                         Operations
                     </h1>
                 </div>
@@ -180,32 +183,63 @@
 
 
     
-
-
-
     <div class="separateSection">
 
-        <div class="textBox">
-        <h1>
-            The Vision
+        <div class="verticalSeparator" style="width:100%; margin: 0%; padding:0; margin-top: 5%; margin-bottom: 10%;">
+        
+        <div class="horizontalSeparator">
+            <h1>
+            <!-- The Aims -->
          </h1>
+         </div>
+         
+         <div class="horizontalSeparator">
 
-         <h2>
-             This is a bunch of text:
-             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </h2>
+         <img src="src/images/macro1.png" style="width: 60%; margin-left:0px; margin-top: -5%;"></img>
+         </div>
         </div>
 
-        <div class="imageBox">
 
+
+        <div class="imageBox" style="opacity: 0; width: 0%;">
+            
             <img class="scrollingImage"></img>
 
         </div>
     </div>
+
+     
+    <div class="separateSection">
+
+        <div class="verticalSeparator" style="width:100%; margin: 0%; padding:0; margin-top: 5%; margin-bottom: 10%;">
+        
+        <div class="horizontalSeparator">
+            <h1>
+            <!-- The Aims -->
+         </h1>
+         </div>
+         
+         <div class="horizontalSeparator">
+
+         <img src="src/images/macro2.png" style="width: 60%; margin-left:0px; margin-top: -5%;"></img>
+         </div>
+        </div>
+
+
+
+        <div class="imageBox" style="opacity: 0; width: 0%;">
+            
+            <img class="scrollingImage"></img>
+
+        </div>
+    </div>
+
+    
+    
     
     
 
-    <div class="separateSection">
+    <div class="separateSection" id="partnerships">
 
         <div class="textBox">
         <h1>
@@ -280,7 +314,7 @@
                </h2>
            </div>
    
-           <div class="imageBox">
+           <div class="imageBox" style="opacity: 0; width:0%;">
    
                <img class="scrollingImage" style="opacity: 0; width:0%;"></img>
    

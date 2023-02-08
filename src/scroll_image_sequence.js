@@ -8,7 +8,15 @@ for (i= 1; i < 139 ; i++) {
 
 const isTimeAnimated = []
 
+function gotoDiv(location){
 
+    const html = document.documentElement;
+    html.classList.add("scrollSmooth");
+    const targetDiv = document.getElementById(location);
+    targetDiv.scrollIntoView();
+    html.classList.remove("scrollSmooth");
+  }
+//   gotoDiv();
 
 const divs = document.getElementsByClassName("separateSection")
 const imgs = Array(...document.getElementsByClassName("scrollingImage"))

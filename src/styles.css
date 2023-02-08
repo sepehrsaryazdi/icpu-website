@@ -3,6 +3,18 @@
   justify-content: center;
   flex-flow: row wrap;
 }
+
+
+.scrollSmooth {
+  scroll-behavior: smooth;
+}
+
+
+/* html {
+  scroll-behavior:unset;
+} */
+
+
 /* 
 body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
@@ -21,6 +33,11 @@ body {
   margin-bottom: 50%;
   margin-left: 70%;
   font-size: 100px;
+}
+
+a {
+  text-decoration:none;
+  
 }
 
 body {
@@ -52,8 +69,8 @@ body {
 
 .background {
 
-  border: 1px;
-  border-style: solid;
+  /* border: 1px;
+  border-style: solid; */
   border-color: transparent;
   top:0;
   /* left: 50%; */
@@ -123,8 +140,8 @@ svg {
 
 .textBox {
   
-  border: 1px green;
-  border-style: solid;
+  /* border: 1px green;
+  border-style: solid; */
   width: 35%;
   padding-left: 4%;
   padding-top: 10%;
@@ -139,8 +156,8 @@ svg {
 
 
 .imageBox {
-  border: 1px red;
-  border-style: solid;
+  /* border: 1px red;
+  border-style: solid; */
   /* width: 65%; */
   padding-left: 0%;
   padding-right: 0%;
@@ -152,8 +169,8 @@ svg {
 }
 
 .scrollingImage {
-  border: 1px red;
-  border-style: solid;
+  /* border: 1px red;
+  border-style: solid; */
   width: 100%;
 }
 
@@ -186,33 +203,45 @@ svg {
 
 }
 
-/* .pillar:hover{
-  box-shadow: 120px 80px 40px 20px #0ff;
-} */
+.pillar:hover{
+  color: rgba(255, 255, 255, 1);
+  box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+}
 
-.bounce:hover {
+
+.pillarText {
+  z-index: 2;
+  color: black;
+}
+
+
+/* 
+.pillar:hover {
   animation-name: bounce;
   animation-timing-function: ease;
-}
+} */
 @keyframes bounce {
 0%   { transform: translateY(0); }
 50%  { transform: translateY(-50px); }
 100% { transform: translateY(0); }
 }
 
+
+
 .pillar {
-  /* z-index: 1; */
+  z-index: 1;
   margin: 0;
   padding: 0;
   width:200px;
   margin-left:5%;
   margin-right: 5%;
-  border: 1px;
-  border-style: solid;
+  /* border: 1px;
+  border-style: solid; */
   display:flex;
   justify-content: center;
   flex-flow: column wrap;
   align-items: center;
+  transition: all 0.1s ease-in-out;
   /* width: 1%; */
 }
 
