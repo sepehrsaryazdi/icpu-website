@@ -158,6 +158,24 @@ svg {
 }
 
 
+.centeredObjects {
+  display:flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.verticalSeparator {
+  justify-content: center;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.horizontalSeparator {
+  display:flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
 .pillarItems {
   /* margin-top: -1800px; */
   /* border: 1px;
