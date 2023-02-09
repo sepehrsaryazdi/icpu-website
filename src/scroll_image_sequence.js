@@ -2,7 +2,8 @@
 const dogSequenceImages = []
 
 for (i= 1; i < 139 ; i++) {
-    dogSequenceImages.push(`src/svg_sequence/dog/dog` + `${`${i}`}`.padStart(4, '0') + `.svg`)
+    // dogSequenceImages.push(`src/svg_sequence/dog/dog` + `${`${i}`}`.padStart(4, '0') + `.svg`)
+    dogSequenceImages.push(`src/svg_sequence/environmentVideo/ezgif-frame-` + `${`${i}`}`.padStart(3, '0') + `.jpg`)
 }
 
 const videoManaged = []
@@ -63,7 +64,7 @@ const imgs = Array(...document.getElementsByClassName("scrollingImage"))
 const imageSequences = []
 for(i = 0 ; i < divs.length ; i ++){
     imageSequences.push(dogSequenceImages)
-    isTimeAnimated.push(false)
+    isTimeAnimated.push(true)
 }
 
 isTimeAnimated[8] = true;
