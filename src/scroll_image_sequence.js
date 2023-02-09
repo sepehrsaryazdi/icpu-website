@@ -5,6 +5,10 @@ for (i= 1; i < 139 ; i++) {
     dogSequenceImages.push(`src/svg_sequence/dog/dog` + `${`${i}`}`.padStart(4, '0') + `.svg`)
 }
 
+const videoManaged = []
+for (i= 1; i < 31 ; i++) {
+    videoManaged.push(`src/svg_sequence/environmentVideo/ezgif-frame-` + `${`${i}`}`.padStart(3, '0') + `.jpg`)
+}
 
 const isTimeAnimated = []
 
@@ -62,9 +66,9 @@ for(i = 0 ; i < divs.length ; i ++){
     isTimeAnimated.push(false)
 }
 
-isTimeAnimated[1] = true;
+isTimeAnimated[8] = true;
 
-
+imageSequences[8] = videoManaged;
 
 
 var imgSources = []
@@ -216,7 +220,7 @@ class ImageSequenceControl {
                     const currentIntervalId = this.animatingIntervals.length;
                     var function_val = () => this.updateLiveAnimation(currentDivIndex, domainLeft, domainLeft + this.imageSequences[currentDivIndex].length, currentIntervalId);
                     this.wasTimeAnimated[this.currentDiv] = true;
-                    var newIntervalId = setInterval(function_val,35);
+                    var newIntervalId = setInterval(function_val,50);
                     this.animatingIntervals.push(newIntervalId)
                     
                 }
