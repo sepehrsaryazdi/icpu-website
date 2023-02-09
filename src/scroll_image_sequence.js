@@ -10,10 +10,19 @@ const isTimeAnimated = []
 
 
 function showImage(id) {
-    console.log(id);
-    document.getElementById(id)
-    .style.opacity = 1;
+    const image = document.getElementById(id);
+
+    image.style.opacity = 1;
+    image.style.width = 500 + "px";
 }
+
+function blockImage(id) {
+    const image = document.getElementById(id);
+
+    image.style.opacity = 0;
+    image.style.width = 0 + "px";
+}
+
 
 function gotoDiv(location){
 
