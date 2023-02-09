@@ -8,6 +8,13 @@ for (i= 1; i < 139 ; i++) {
 
 const isTimeAnimated = []
 
+
+function showImage(id) {
+    console.log(id);
+    document.getElementById(id)
+    .style.opacity = 1;
+}
+
 function gotoDiv(location){
 
     const html = document.documentElement;

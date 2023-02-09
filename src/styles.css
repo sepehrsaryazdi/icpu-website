@@ -145,6 +145,16 @@ svg {
   transition: all 0.1s ease-in-out;
 }
 
+#dalle {
+  image-rendering: auto;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: -webkit-optimize-contrast;
+  opacity: 0;
+  transition: all 0.1s ease-in-out;
+
+}
+
 .textBox {
   
   /* border: 1px green;

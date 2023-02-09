@@ -399,9 +399,9 @@
 
 
     <div class="separateSection" id="productLine">
-        <div class="textBox" style="width: 100%; margin-top: 10%;">
+        <div class="textBox" style="width: 100%; margin-top: -5%;">
 
-            
+            <div class="verticalSeparator">
 
             <div class="horizontalSeparator">
 
@@ -409,10 +409,21 @@
                 <textarea type="text" id="fname" name="fname" style="font-size: 30px; height: 135px; width: 500px;" readonly="readonly">A photo of humanoid robot painting itself in camouflage.</textarea>
               </form>
             
-              <button class="button" type="button" style="background-color: blueviolet; height: 140px; width: 180px; margin-left: 1%;"><h1 style="color: white;">GENERATE</h1></button>
+              <button onclick="showImage('dalle')" class="button" type="button" style="background-color: blueviolet; height: 140px; width: 180px; margin-left: 1%;"><h1 style="color: white;">GENERATE</h1></button>
             
 
         </div>
+        
+
+        <div class="horizontalSeparator">
+            
+            <img id="dalle" src="src/images/dalle.png" style="width: 30%; margin-left:0px; margin-top: 5%;"></img>
+
+
+        </div>
+
+
+    </div>
        
 
    </div>
