@@ -154,12 +154,26 @@ svg {
 
 #pdf1 {
   opacity: 1;
-  width: 900px;
+  width: 800px;
   height: 500px;
   transition: all 0.1s ease-in-out;
 }
 
 #pdf2 {
+  opacity: 0;
+  transition: all 0.1s ease-in-out;
+  width:0px;
+}
+
+
+#image1 {
+  width: 800px;
+  height: 800px;
+  opacity: 1;
+  transition: all 0.1s ease-in-out;
+}
+
+#image2 {
   opacity: 0;
   transition: all 0.1s ease-in-out;
   width:0px;

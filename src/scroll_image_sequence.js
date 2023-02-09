@@ -16,6 +16,16 @@ function showImage(id) {
     image.style.width = 500 + "px";
 }
 
+
+function showImage2(id) {
+    const image = document.getElementById(id);
+
+    image.style.opacity = 1;
+    image.style.width = 800 + "px";
+    image.style.height = 800 + "px";
+}
+
+
 function blockImage(id) {
     const image = document.getElementById(id);
 
