@@ -30,8 +30,8 @@ function showImage3(id) {
     const image = document.getElementById(id);
 
     image.style.opacity = 1;
-    image.style.width = 800 + "px";
-    image.style.height = 800 + "px";
+    image.style.width = 700 + "px";
+    image.style.height = 700 + "px";
 }
 
 
