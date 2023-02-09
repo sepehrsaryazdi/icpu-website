@@ -67,9 +67,9 @@ for(i = 0 ; i < divs.length ; i ++){
     isTimeAnimated.push(true)
 }
 
-isTimeAnimated[8] = true;
+// isTimeAnimated[8] = true;
 
-imageSequences[8] = videoManaged;
+// imageSequences[8] = videoManaged;
 
 
 var imgSources = []
