@@ -9,7 +9,7 @@ for (i= 1; i < 139 ; i++) {
 const isTimeAnimated = []
 
 
-function showImage(id) {
+function showImage1(id) {
     const image = document.getElementById(id);
 
     image.style.opacity = 1;
@@ -18,6 +18,15 @@ function showImage(id) {
 
 
 function showImage2(id) {
+    const image = document.getElementById(id);
+
+    image.style.opacity = 1;
+    image.style.width = 350 + "px";
+}
+
+
+
+function showImage3(id) {
     const image = document.getElementById(id);
 
     image.style.opacity = 1;
